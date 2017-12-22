@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col">
+            {{ object }} <br>
+            {{ object.embed_code|safe }}
+
+            <br><br>
+
+            <form>
+            <a href="{% url 'video-update' object.id %}" class="btn btn-primary" role="button">Update</a>
+            {% csrf_token %}
+                <a href="{% url 'video-delete' object.id %}" class="btn btn-danger">Delete</button></a>
+            <a href="javascript:history.back()" class="btn btn-secondary" role="button">Back</a>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+
+{% endblock %}}
